@@ -3,33 +3,30 @@ import { ArrowRight, Layers, Palette, Zap } from 'lucide-react'
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col items-center space-y-24 py-16">
+    <div className="flex flex-col items-center space-y-32 px-4 py-20">
       {/* Hero Section */}
-      <section className="text-center max-w-3xl px-4">
-        <div className="inline-block rounded-full bg-[#e0e5ec] px-4 py-1 text-sm font-medium text-gray-500 shadow-[inset_2px_2px_5px_#bebebe,inset_-2px_-2px_5px_#ffffff] mb-6">
-          🚀 Boilerplate siap pakai
-        </div>
-        <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6">
-          Bangun Aplikasi Lebih Cepat dengan{' '}
+      <section className="max-w-3xl text-center">
+        <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl dark:text-white">
+          Bangun aplikasi lebih cepat dengan{' '}
           <span className="text-primary">Boilerplate Modern</span>
         </h1>
-        <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
-          Fokus pada fitur, bukan konfigurasi. Semua fondasi sudah siap — tinggal
-          eksekusi idemu.
+        <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-gray-500 dark:text-gray-400">
+          Fokus pada fitur, bukan konfigurasi. Semua fondasi sudah siap —
+          tinggal eksekusi idemu.
         </p>
-        <div className="flex gap-4 justify-center">
-          <Button size="lg" className="gap-2">
+        <div className="flex flex-col justify-center gap-4 sm:flex-row">
+          <Button size="lg" className="gap-2 px-8">
             Mulai Sekarang <ArrowRight className="h-4 w-4" />
           </Button>
-          <Button variant="outline" size="lg">
+          <Button variant="outline" size="lg" className="px-8">
             Dokumentasi
           </Button>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="w-full max-w-5xl px-4">
-        <div className="grid gap-8 md:grid-cols-3">
+      <section className="w-full max-w-5xl">
+        <div className="grid gap-6 md:grid-cols-3">
           {[
             {
               icon: Zap,
@@ -49,26 +46,33 @@ export default function HomePage() {
           ].map(({ icon: Icon, title, desc }) => (
             <div
               key={title}
-              className="rounded-2xl bg-[#e0e5ec] p-6 shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] flex flex-col items-center text-center gap-3"
+              className="flex flex-col items-center gap-4 rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-all duration-200 hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#e0e5ec] shadow-[2px_2px_5px_#bebebe,-2px_-2px_5px_#ffffff]">
-                <Icon className="h-6 w-6 text-primary" />
+              <div className="bg-primary/10 text-primary flex h-12 w-12 items-center justify-center rounded-lg">
+                <Icon className="h-6 w-6" />
               </div>
-              <h3 className="text-lg font-semibold">{title}</h3>
-              <p className="text-sm text-muted-foreground">{desc}</p>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                {title}
+              </h3>
+              <p className="text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+                {desc}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="w-full max-w-2xl px-4">
-        <div className="rounded-2xl bg-[#e0e5ec] p-8 shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] text-center">
-          <h2 className="text-3xl font-bold mb-4">Siap Memulai?</h2>
-          <p className="text-muted-foreground mb-6">
-            Clone repo ini dan mulai bangun proyek impianmu dalam hitungan menit.
+      <section className="w-full max-w-2xl">
+        <div className="bg-primary/5 dark:bg-primary/10 border-primary/20 dark:border-primary/30 rounded-xl border px-8 py-10 text-center transition-colors duration-200">
+          <h2 className="mb-4 text-2xl font-bold text-gray-900 sm:text-3xl dark:text-white">
+            Siap Memulai?
+          </h2>
+          <p className="mx-auto mb-8 max-w-md text-gray-500 dark:text-gray-400">
+            Clone repo ini dan mulai bangun proyek impianmu dalam hitungan
+            menit.
           </p>
-          <Button size="lg" className="gap-2">
+          <Button size="lg" className="gap-2 px-8">
             Lihat di GitHub <ArrowRight className="h-4 w-4" />
           </Button>
         </div>

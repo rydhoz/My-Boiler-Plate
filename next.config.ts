@@ -31,9 +31,9 @@ const nextConfig: NextConfig = {
    * 3. EXPERIMENTAL FEATURES
    * Fitur terbaru Next.js untuk meningkatkan developer experience dan performa.
    */
+  serverExternalPackages: ['@prisma/client'],
   experimental: {
     // Mengoptimalkan loading server components (lebih cepat)
-    serverComponentsExternalPackages: ['@prisma/client'],
 
     // Mengaktifkan optimasi untuk pengiriman data antara Server dan Client
     ppr: false, // Partial Prerendering (masih sangat beta, set false dulu tapi sudah siap jika ingin coba)
