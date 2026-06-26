@@ -15,19 +15,19 @@ export default function BuildBasicLayout() {
 
       {/* Prasyarat */}
       <div className="mt-4 rounded-xl bg-[#e8edf2] p-3 text-sm text-gray-600 shadow-[inset_1px_1px_3px_#bebebe,inset_-1px_-1px_3px_#ffffff]">
-        <strong>Prasyarat:</strong> Instal ikon{' '}
-        <code>lucide-react</code> jika belum ada:{' '}
-        <code className="font-mono">npm install lucide-react</code>
+        <strong>Prasyarat:</strong> Instal ikon <code>lucide-react</code> jika
+        belum ada: <code className="font-mono">npm install lucide-react</code>
       </div>
 
       <div className="mt-4 space-y-4">
-        {/* A. Navbar */}
+        {/* A. Navbar – Desain Profesional Minimalis */}
         <div>
           <h3 className="text-sm font-semibold text-gray-600">
             A. Navbar (<code>src/components/layouts/navbar.tsx</code>)
           </h3>
           <p className="mt-1 text-sm text-gray-600">
-            Navbar mengambang dengan efek neumorphism yang lembut.
+            Navbar dengan tampilan bersih, border halus, dan mendukung dark
+            mode.
           </p>
           <CodeBlock
             lang="tsx"
@@ -40,15 +40,38 @@ import { Sun, Moon } from 'lucide-react'
 export default function Navbar() {
   const { theme, setTheme } = useTheme()
   return (
-    <header className="sticky top-4 z-50 mx-4">
-      <div className="rounded-2xl bg-[#e0e5ec] shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] flex h-16 items-center justify-between px-6">
-        <Link href="/" className="font-bold text-xl">Boilerplate</Link>
-        <nav className="flex items-center gap-4">
-          <Link href="/features" className="text-sm font-medium">Features</Link>
+    <header className="mx-4 mt-4">
+      <div className="
+        flex h-16 items-center justify-between px-6
+        rounded-xl
+        bg-white dark:bg-gray-900
+        border border-gray-200 dark:border-gray-800
+        shadow-sm
+        transition-colors duration-200
+      ">
+        <Link
+          href="/"
+          className="text-xl font-semibold text-gray-900 dark:text-gray-100 tracking-tight"
+        >
+          Boilerplate
+        </Link>
+        <nav className="flex items-center gap-6">
+          <Link
+            href="/features"
+            className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors duration-150"
+          >
+            Features
+          </Link>
+          <Link
+            href="/flow"
+            className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors duration-150"
+          >
+            Flow
+          </Link>
           <Button
             variant="ghost"
             size="icon"
-            className="relative rounded-xl bg-[#e0e5ec] shadow-[3px_3px_6px_#bebebe,-3px_-3px_6px_#ffffff] hover:shadow-[inset_3px_3px_6px_#bebebe,inset_-3px_-3px_6px_#ffffff]"
+            className="rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-200 transition-all duration-150"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           >
             <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -61,31 +84,49 @@ export default function Navbar() {
 }`}
           />
           <p className="mt-2 text-sm text-gray-600">
-            Tombol dark mode dibuat dengan gaya neumorphism yang sama agar menyatu.
+            Desain ini menggunakan warna netral, bayangan tipis, dan transisi
+            halus. Menu “Flow” sudah ditambahkan di samping “Features”.
           </p>
         </div>
 
-        {/* B. Footer */}
+        {/* B. Footer – Desain Profesional Minimalis */}
         <div>
           <h3 className="text-sm font-semibold text-gray-600">
             B. Footer (<code>src/components/layouts/footer.tsx</code>)
           </h3>
           <p className="mt-1 text-sm text-gray-600">
-            Footer neumorphism yang menempel di bawah konten.
+            Footer dengan batas atas sebagai pemisah alami, tanpa efek berat.
           </p>
           <CodeBlock
             lang="tsx"
             code={`export default function Footer() {
   return (
-    <footer className="mt-auto px-4 pb-4">
-      <div className="rounded-2xl bg-[#e0e5ec] shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] p-6">
+    <footer className="px-4 pb-4 mt-auto">
+      <div className="
+        rounded-xl
+        bg-white dark:bg-gray-900
+        border border-gray-200 dark:border-gray-800
+        shadow-sm
+        px-6 py-5
+        transition-colors duration-200
+      ">
         <div className="flex flex-col items-center gap-2 text-center md:flex-row md:justify-between">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             © ${new Date().getFullYear()} My Boilerplate. All rights reserved.
           </p>
-          <nav className="flex gap-4 text-sm text-muted-foreground">
-            <a href="/terms">Terms</a>
-            <a href="/privacy">Privacy</a>
+          <nav className="flex gap-6 text-sm text-gray-500 dark:text-gray-400">
+            <a
+              href="/terms"
+              className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-150"
+            >
+              Terms
+            </a>
+            <a
+              href="/privacy"
+              className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-150"
+            >
+              Privacy
+            </a>
           </nav>
         </div>
       </div>
