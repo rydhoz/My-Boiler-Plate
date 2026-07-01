@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "author": "Ridho Akbar",
+  "description": "Boilerplate Professinal Standart with Next.js, TypeScript, TailwindCSS, Prisma, NextAuth, Supabase, and more.",
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build --turbopack",
